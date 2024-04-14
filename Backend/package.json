@@ -4,8 +4,15 @@
   "description": "servers",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start-server1": "node index.js",
+    "start-server2": "node payment.js",
+    "start-server3": "node email.js",
+    "start-server4": "node ship.js",
+    "start-server5": "node data.js",
+    "build": "vite build"
+   
+  }
+  ,
   "author": "Aj",
   "license": "ISC",
   "dependencies": {
