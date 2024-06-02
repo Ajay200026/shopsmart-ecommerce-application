@@ -162,7 +162,7 @@ const ProductDetails = () => {
           onSubmit={handleSubmit}
           className="w-[800px] fixed mt-[12rem] ml-[6rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded shadow-lg z-50"
         >
-          <div className="flex items-center  gap-10">
+          <div className="flex justify-between ">
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -216,7 +216,7 @@ const ProductDetails = () => {
               />
             </div>
           </div>
-          <div className="flex items-center  gap-10">
+          <div className="flex justify-between ">
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -271,7 +271,7 @@ const ProductDetails = () => {
               />
             </div>
           </div>
-          <div className="flex items-center gap-10">
+          <div className="flex justify-between ">
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -328,7 +328,7 @@ const ProductDetails = () => {
               />
             </div>
           </div>
-          <div>
+          <div className="flex justify-between">
             {/* Product Type */}
             <div className="mb-4">
               <label

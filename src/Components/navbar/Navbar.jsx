@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
+import { FiLogIn, FiLogOut } from "react-icons/fi";
 import { HiShoppingCart } from "react-icons/hi";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import { SearchBar } from "../../Searchbar/SearchBar";
 import { SearchResultsList } from "../../Searchbar/SearchResultsList";
 import { useCart } from "../cart/CartContext";
@@ -38,7 +40,8 @@ const Navbar = () => {
     }
   };
   const handleCartClick = () => {
-    if (!user || user.userName === "Admin") {
+    if (!user) {
+      // If user is not logged in
       Swal.fire({
         title: "Login Required",
         text: "Please login to view your cart.",
@@ -51,11 +54,19 @@ const Navbar = () => {
           navigate("/authpage");
         }
       });
+    } else if (user.userName === "Admin") {
+      // If user is an admin
+      Swal.fire({
+        title: "Admin Account",
+        text: "Admins cannot access the cart.",
+        icon: "info",
+        confirmButtonText: "OK",
+      });
     } else {
+      // If user is logged in and not an admin
       navigate("/cart");
     }
   };
-
   useEffect(() => {
     function handleClickOutside(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -76,7 +87,7 @@ const Navbar = () => {
     }
   }, [user, setUser]);
   return (
-    <nav className="flex bg-gradient-to-r from-emerald-500 to-emerald-900 p-4 fixed w-full h-[10vh] top-0 left-0 z-50">
+    <nav className="flex bg-gradient-to-r from-emerald-500 to-emerald-900 p-4 fixed w-full h-[8vh] top-0 left-0 z-50">
       <div className="container mx-auto flex justify-center gap-[4rem] items-center">
         {user && user.userName === "Admin" ? (
           <span className="text-white text-xl font-bold">
@@ -96,7 +107,7 @@ const Navbar = () => {
 
         {/* Search Bar */}
         <div className="flex">
-          <div className="search-bar-container">
+          <div className="search-bar-container ">
             <SearchBar setResults={setResults} />
             {results && results.length > 0 && (
               <SearchResultsList results={results} />
@@ -194,14 +205,20 @@ const Navbar = () => {
                 </Link>
 
                 <button onClick={handleLogout} className="text-white">
-                  Logout
+                  <span className="flex items-center">
+                    Logout
+                    <FiLogOut />
+                  </span>
                 </button>
               </>
             )}
           </>
         ) : (
           <Link to="/authpage" className="text-white">
-            Login
+            <span className="flex items-center">
+              Login
+              <FiLogIn />
+            </span>
           </Link>
         )}
 

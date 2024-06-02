@@ -159,7 +159,7 @@ const Fashion = ({}) => {
   }
 
   return (
-    <div className="mt-[8rem] px-12">
+    <div className="mt-[6rem] px-18 ">
       <ProductFilters
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
@@ -172,7 +172,7 @@ const Fashion = ({}) => {
         {priceFilteredProducts.map((product) => (
           <div
             key={product.id}
-            className="bg-white shadow-md rounded-lg overflow-hidden relative"
+            className="bg-white shadow-md rounded-lg overflow-hidden relative mt-[4rem]"
           >
             <div className="absolute top-0 right-0 p-2 flex flex-col items-center mt-[1rem] mr-[1rem] justify-center gap-1">
               <FaHeart
@@ -190,7 +190,7 @@ const Fashion = ({}) => {
               <img
                 src={`http://localhost:8000/api/products/image/${product.id}`}
                 alt={product.productName}
-                className="w-[310px] h-auto flex items-center ml-5 mt-2"
+                className="w-[328px] h-[310px] flex items-center px-4   mt-2"
               />
             )}
             <div className="p-4">
@@ -219,7 +219,7 @@ const Fashion = ({}) => {
               </p>
               <div className="flex justify-between mt-4">
                 <button
-                  className="bg-blue-500 hover:bg-blue-700 w-[150px] h-[40px] text-white font-bold py-2 px-4 rounded-lg"
+                  className="bg-gray-600 hover:bg-blue-300 w-[150px] h-[40px] text-white font-bold py-2 px-4 rounded-xl"
                   onClick={() => handleAddToCart(product)}
                 >
                   <span className="flex items-center">
@@ -228,7 +228,7 @@ const Fashion = ({}) => {
                     Add to Cart
                   </span>
                 </button>
-                <button className="bg-green-500 hover:bg-green-700 h-[40px] text-white font-bold py-2 px-4 rounded-lg">
+                <button className="bg-pink-700 hover:bg-gray-400 h-[40px] text-white font-bold py-2 px-4 rounded-xl">
                   Buy Now
                 </button>
               </div>

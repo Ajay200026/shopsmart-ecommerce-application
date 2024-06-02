@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash, FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useAuth } from "./AuthContext";
 
@@ -117,9 +117,12 @@ const AuthPage = () => {
               break;
           }
         } else {
-          console.error("Unexpected response format:", response);
-          setErrors({
-            general: "Unexpected response format. Authentication failed.",
+          // Display error message for invalid login credentials
+          Swal.fire({
+            title: "Invalid login credentials",
+            text: "Please check your email and password and try again.",
+            icon: "error",
+            confirmButtonText: "OK",
           });
         }
       }
@@ -132,8 +135,29 @@ const AuthPage = () => {
       setUserType("customer");
       setErrors({});
     } catch (error) {
-      console.error(error.response?.data || error.message);
+      Swal.fire({
+        title: "Invalid login credentials",
+        text: "Please check your email and password and try again.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
       if (error.response?.status === 404) {
+        // Unauthorized error
+        Swal.fire({
+          title: "Invalid login credentials",
+          text: "Please check your email and password and try again.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      } else if (error.response?.status === 404) {
+        // Server error 404
+        Swal.fire({
+          title: "Resource Not Found",
+          text: "The requested resource is not found on the server.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      } else if (error.response?.status === 404) {
         // Server error 404
         Swal.fire({
           title: "Resource Not Found",
@@ -155,7 +179,7 @@ const AuthPage = () => {
         <img
           className="w-[600px] h-[500px] max-sm:hidden"
           src="/3d-image.jpg"
-          alt=""
+          alt="login"
         />
         {/* You can adjust the background image and styles accordingly */}
       </div>
@@ -323,9 +347,9 @@ const AuthPage = () => {
         {/* Conditional Rendering for Forget Password/Signup Link */}
         {!signupMode ? (
           <div className="mt-4 text-center">
-            <a href="#" className="text-blue-500">
-              Forgot your password?
-            </a>
+            <Link to="/forgotpassword">
+              <a className="text-blue-500">Forgot your password?</a>
+            </Link>
           </div>
         ) : (
           <div className="mt-4 text-center">

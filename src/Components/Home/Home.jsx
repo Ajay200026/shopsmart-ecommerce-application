@@ -10,14 +10,14 @@ import SliderComponent from "./SliderComponent";
 const Home = () => {
   return (
     <div className="flex flex-col">
-      <div className=" mt-[4.2rem]">
+      <div className=" mt-[3.2rem]">
         <Slider />
       </div>
       <div className=" mt-[18rem] flex justify-center items-center">
         <Grid />
       </div>
 
-      <div className="mt-[2rem]">
+      <div className="mt-[2rem]  lg:ml-[4rem]">
         <SliderComponent />
       </div>
       <div>

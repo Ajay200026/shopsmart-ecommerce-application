@@ -9,7 +9,7 @@ const ProductFilters = ({
   setMinPrice,
 }) => {
   return (
-    <div className="flex justify-end mb-4">
+    <div className="flex justify-end mb-4 fixed ml-[50rem] z-50">
       <input
         type="text"
         placeholder="Search..."

@@ -19,18 +19,19 @@ const Sidebar = ({ setActiveContent, handleLogout }) => {
         >
           Order Details
         </li>
+        {/*
         <li
           onClick={() => setActiveContent("legalNotice")}
           className="cursor-pointer hover:bg-gray-300 py-2 px-4"
         >
-          Profile
-        </li>
+           Profile
+       </li>
         <li
           onClick={() => setActiveContent("orderHistory")}
           className="cursor-pointer hover:bg-gray-300 py-2 px-4"
         >
           Shiped Details
-        </li>
+  </li>*/}
         <li
           onClick={() => setActiveContent("savedAddress")}
           className="cursor-pointer hover:bg-gray-300 py-2 px-4"
@@ -52,18 +53,22 @@ const MainContent = ({ activeContent }) => {
               <div className="  bg-gray-100 flex justify-center items-center rounded-md">
                 <TotalOfferPrice />
               </div>
-              <div className="flex overflow-x-auto overflow-y-auto h-[400px]">
+              <div className="h-[62vh] w-[1180px] overflow-x-auto overflow-y-auto scrollbar-hide">
                 <ProductContainer />
               </div>
             </div>
           </div>
         );
       case "changePassword":
-        return <div>Change Password Content</div>;
-      case "legalNotice":
-        return <div>hiii</div>;
-      case "orderHistory":
-        return <div>hello</div>;
+        return (
+          <div className=" h-[90vh] overflow-x-auto overflow-y-auto scrollbar-hide">
+            <ProductContainer />
+          </div>
+        );
+      //case "legalNotice":
+      // return <div>hiii</div>;
+      // case "orderHistory":
+      //   return <div>hello</div>;
       case "savedAddress":
         return (
           <div className="w-[1150px]">

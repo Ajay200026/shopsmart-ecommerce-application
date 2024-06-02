@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
   animation: {
     "infinite-scroll": "infinite-scroll 25s linear infinite",
   },

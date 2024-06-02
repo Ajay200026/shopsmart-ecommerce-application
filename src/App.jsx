@@ -17,6 +17,7 @@ import OrderSuccessPage from "./Components/checkout/OrderSuccessPage";
 import PaymentForm from "./Components/checkout/PaymentForm";
 import { AuthProvider } from "./Components/login-Signup/AuthContext";
 import AuthPage from "./Components/login-Signup/AuthPage";
+import ForgotPassword from "./Components/login-Signup/ForgotPassword";
 import Login from "./Components/login-Signup/Login";
 import SignInSignUpPage from "./Components/login-Signup/SignInSignUpPage";
 import Navbar from "./Components/navbar/Navbar";
@@ -27,37 +28,6 @@ import ProfilePage from "./Components/profile/ProfilePage";
 import OrderHistory from "./Components/profile/orderhistory/OrderHistory";
 import SavedAddresses from "./Components/profile/savedadress/SavedAddresses";
 function App() {
-  {
-    /* const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUserName] = useState("");
-
-  useEffect(() => {
-    // Check for token in local storage
-    const token = localStorage.getItem("token");
-    if (token) {
-      // Decode token to extract user's information
-      const tokenParts = token.split(".");
-      const encodedPayload = tokenParts[1];
-      const decodedPayload = atob(encodedPayload);
-      const { name } = JSON.parse(decodedPayload);
-
-      setIsLoggedIn(true);
-      setUserName(name);
-    }
-  }, []);
-  const login = (name) => {
-    setIsLoggedIn(true);
-    setUserName(name); // Store user's email
-  };
-  const logout = () => {
-    setIsLoggedIn(false);
-    setUserName("");
-    // Additional logout logic, if any
-    localStorage.removeItem("token");
-  };
-  const [results, setResults] = useState([]);
-*/
-  }
   // Check if current location matches the home page route
   const isHomePage = location.pathname === "/";
 
@@ -94,6 +64,7 @@ function App() {
               <Route path="ordersuccesspage" element={<OrderSuccessPage />} />
               <Route path="technologygadgets" element={<TechnologyGadgets />} />
               <Route path="component" element={<Component />} />
+              <Route path="forgotpassword" element={<ForgotPassword />} />
 
               {/* Add more routes for other pages */}
             </Routes>

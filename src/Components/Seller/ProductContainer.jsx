@@ -143,7 +143,7 @@ const ProductContainer = () => {
       {showForm && (
         <form
           onSubmit={handleSubmit}
-          className="w-[800px] fixed mt-[1rem] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded shadow-lg z-50"
+          className="w-[750px]  fixed mt-[10rem] ml-[28rem] transform -translate-x-1/2 -translate-y-1/2 bg-white p-8 rounded shadow-lg z-50"
         >
           <div className="flex items-center  gap-10">
             <div className="mb-4">
@@ -311,7 +311,7 @@ const ProductContainer = () => {
               />
             </div>
           </div>
-          <div>
+          <div className="flex">
             {/* Product Type */}
             <div className="mb-4">
               <label

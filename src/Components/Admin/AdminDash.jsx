@@ -7,7 +7,7 @@ import ProductDetails from "./ProductDetails";
 
 const Sidebar = ({ setActiveContent, handleLogout }) => {
   return (
-    <div className="w-1/5 h-[100vh] bg-gradient-to-r from-slate-300 to-slate-500 p-4 font-extrabold rounded-md fixed">
+    <div className="w-1/5 h-[100vh] bg-gradient-to-r from-slate-300 to-slate-500 p-4 font-extrabold rounded-md ">
       <ul>
         <li
           onClick={() => setActiveContent("Dashboard")}
@@ -55,25 +55,25 @@ const MainContent = ({ activeContent }) => {
     switch (activeContent) {
       case "Dashboard":
         return (
-          <div className=" w-[1140px] ml-[22rem]">
+          <div className="w-[1110px] h-[95vh] ">
             <OrderGraphs />
-            <div>
+            <div className="overflow-scroll scrollbar-hide h-[50vh]">
               <Orders />
             </div>
           </div>
         );
       case "Orders":
         return (
-          <div className="mt-[-1rem] h-[95vh]  overflow-scroll  w-[1140px] ml-[21.5rem]">
+          <div className="mt-[-1rem] h-[95vh] w-[1110px] scrollbar-hide overflow-scroll  ">
             <Orders />
           </div>
         );
       case "Products":
         return (
-          <div className="w-[1140px] ml-[22rem]">
+          <div className="">
             <div className=" ">
               <div className="  bg-gray-100 flex justify-center items-center rounded-md"></div>
-              <div className="flex overflow-x-auto overflow-y-auto h-[90vh]">
+              <div className="flex overflow-x-auto overflow-y-auto scrollbar-hide h-[90vh] ">
                 <ProductDetails />
               </div>
             </div>
@@ -81,7 +81,7 @@ const MainContent = ({ activeContent }) => {
         );
       case " Customers":
         return (
-          <div className="w-[1140px] ml-[23rem]">
+          <div className="w-[1110px] scrollbar-hide">
             <Customers />
           </div>
         );
@@ -89,7 +89,7 @@ const MainContent = ({ activeContent }) => {
         return <div>Saved Address Content</div>;
       case " Settings":
         return (
-          <div className="w-[1140px] ml-[23rem]">
+          <div className="">
             <Component />
           </div>
         );

@@ -26,8 +26,10 @@ export const SearchBar = ({ setResults }) => {
   };
 
   return (
-    <div className="flex items-center border  border-gray-300 w-[320px] h-[30px] bg-orange-200">
-      <FaSearch className="text-gray-500 ml-2 text-center" />
+    <div className="flex items-center border  border-gray-300 rounded-md w-[320px] h-[30px] bg-orange-200">
+      <span className="  flex items-center h-6 w-5">
+        <FaSearch className="text-gray-500 ml-0.5 text-center" />
+      </span>
       <input
         className="py-2 px-4 focus:outline-none w-[296px] h-[30px] "
         placeholder="Type to search..."

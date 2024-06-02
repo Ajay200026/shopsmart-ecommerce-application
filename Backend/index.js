@@ -226,6 +226,55 @@ app.get("/user-details/:username", authenticateToken, (req, res) => {
 // message: `Welcome, ${req.user.name}! This is a protected route.`,
 // });
 //});
+// Add a new endpoint to check if the email exists
+app.get("/check-email/:email", (req, res) => {
+  const { email } = req.params;
+  db.query("SELECT * FROM users WHERE email = ?", [email], (err, result) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send("Internal Server Error");
+    } else {
+      res.json({ matched: result.length > 0 });
+    }
+  });
+});
+
+// Update the /forgot-password endpoint to handle password reset
+app.post("/forgot-password", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Check if the email exists in the database
+    db.query(
+      "SELECT * FROM users WHERE email = ?",
+      [email],
+      async (err, result) => {
+        if (err) {
+          throw err;
+        }
+        if (result.length === 0) {
+          return res.status(404).send("Email not found");
+        } else {
+          // Update the user's password
+          const hashedPassword = await bcrypt.hash(password, 10);
+          db.query(
+            "UPDATE users SET password = ? WHERE email = ?",
+            [hashedPassword, email],
+            (err, result) => {
+              if (err) {
+                throw err;
+              }
+              res.status(200).send("Password updated successfully");
+            }
+          );
+        }
+      }
+    );
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

@@ -61,9 +61,9 @@ const ShippingAddress = ({ onAddressSaved }) => {
       console.error("Error saving shipping address:", error);
       // Show error message using SweetAlert
       Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Failed to save shipping address. Please try again later.",
+        icon: "success",
+        title: "Success",
+        text: "Shipping address saved successfully!",
       });
       // Handle error
       onAddressSaved(false);

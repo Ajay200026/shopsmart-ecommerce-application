@@ -1,5 +1,6 @@
 // Offer.js
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Offer = () => {
   // Define array of objects directly within the component
@@ -59,11 +60,13 @@ const Offer = () => {
             />
             <div className="p-4">
               <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
-              <p className="text-gray-700">Price: ${product.price}</p>
+              <p className="text-gray-700">Price: ₹{product.price}</p>
               <p className="text-gray-600">{product.description}</p>
-              <button className="mt-2 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded-xl">
-                Shop Now
-              </button>
+              <Link to="/fashion">
+                <button className="mt-2 bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded-xl">
+                  Shop Now
+                </button>
+              </Link>
             </div>
           </div>
         ))}

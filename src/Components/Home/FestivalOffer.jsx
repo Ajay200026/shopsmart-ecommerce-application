@@ -1,6 +1,5 @@
-// FestivalOffer.js
 import React from "react";
-
+import { Link } from "react-router-dom";
 const FestivalOffer = () => {
   return (
     <div className="container mx-auto mt-8 flex flex-col  ">
@@ -15,9 +14,11 @@ const FestivalOffer = () => {
             alt="Festival Offer"
           />
           <div className="absolute inset-0 flex items-center justify-center">
-            <button className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-xl transition duration-300 transform hover:scale-105">
-              Shop Now
-            </button>
+            <Link to="/fashion">
+              <button className="bg-gray-500 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded-xl transition duration-300 transform hover:scale-105">
+                Shop Now
+              </button>
+            </Link>
           </div>
           <div className="absolute bottom-0 left-0 right-0 p-4 text-center text-white">
             <h2 className="text-xl font-semibold">Special Festival Offer</h2>
@@ -45,7 +46,7 @@ const FestivalOffer = () => {
                 <span className="text-yellow-500">&#9733;</span>
                 <span className="text-yellow-500">&#9734;</span>
               </div>
-              <p className="text-gray-700">Price: $100</p>
+              <p className="text-gray-700">Price: ₹100</p>
             </div>
           </div>
 
@@ -67,7 +68,7 @@ const FestivalOffer = () => {
                 <span className="text-yellow-500">&#9734;</span>
                 <span className="text-yellow-500">&#9734;</span>
               </div>
-              <p className="text-gray-700">Price: $150</p>
+              <p className="text-gray-700">Price: ₹150</p>
             </div>
           </div>
 
@@ -89,7 +90,7 @@ const FestivalOffer = () => {
                 <span className="text-yellow-500">&#9733;</span>
                 <span className="text-yellow-500">&#9734;</span>
               </div>
-              <p className="text-gray-700">Price: $200</p>
+              <p className="text-gray-700">Price:₹200</p>
             </div>
           </div>
           {/* Card 3 */}
@@ -110,7 +111,7 @@ const FestivalOffer = () => {
                 <span className="text-yellow-500">&#9733;</span>
                 <span className="text-yellow-500">&#9734;</span>
               </div>
-              <p className="text-gray-700">Price: $200</p>
+              <p className="text-gray-700">Price: ₹200</p>
             </div>
           </div>
         </div>

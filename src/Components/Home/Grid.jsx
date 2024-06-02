@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Grid = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -35,9 +36,11 @@ const Grid = () => {
           <p className="text-sm">
             Explore our ecommerce website for the latest in fashion.
           </p>
-          <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
-            Shop Now
-          </button>
+          <Link to="/fashion">
+            <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
+              Shop Now
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -66,9 +69,11 @@ const Grid = () => {
               <p className="text-sm">
                 Enhance your ride with premium car gear.
               </p>
-              <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
-                Shop Now
-              </button>
+              <Link to="/automobiles">
+                <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
+                  Shop Now
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -94,9 +99,11 @@ const Grid = () => {
               <p className="text-sm">
                 Upgrade your home with modern appliances.
               </p>
-              <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
-                Shop Now
-              </button>
+              <Link to="/homeproducts">
+                <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
+                  Shop Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -121,9 +128,11 @@ const Grid = () => {
           >
             <h3 className="text-lg font-semibold">Technology Gadgets</h3>
             <p className="text-sm">Explore the latest in tech innovations.</p>
-            <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
-              Shop Now
-            </button>
+            <Link to="/technologygadgets">
+              <button className="mt-2 px-4 py-2 bg-gray-500 hover:bg-blue-600 rounded-lg">
+                Shop Now
+              </button>
+            </Link>
           </div>
         </div>
       </div>

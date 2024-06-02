@@ -10,7 +10,7 @@ const SliderComponent = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
+    slidesToShow: 4,
     slidesToScroll: 1,
   };
 
@@ -57,14 +57,19 @@ const SliderComponent = () => {
   return (
     <Slider
       {...settings}
-      className="w-[96%] ml-[1.5rem] px-2  h-[350px] flex items-center mb-3"
+      className="w-[1200px] justify-center ml-[0rem] px-2   h-[500px] flex items-center mb-3"
     >
       {cardsData.map((item) => (
         <div
-          className="overflow-hidden flex justify-around px-13 ml-10 py-4 mb-8"
+          className="overflow-hidden flex   justify-around px-13 ml-10 py-4 mb-8"
           key={item.id}
         >
-          <Card imageUrl={item.imageUrl} name={item.name} price={item.price} />
+          <Card
+            className=" bg-green-500"
+            imageUrl={item.imageUrl}
+            name={item.name}
+            price={item.price}
+          />
         </div>
       ))}
     </Slider>

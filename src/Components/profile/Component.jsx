@@ -30,6 +30,7 @@ function Component() {
         .then((response) => {
           setUserData(response.data);
         })
+
         .catch((error) => {
           console.error("Error fetching user data:", error);
           if (error.response) {
